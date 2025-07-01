@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # eiaMeeting2g
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -33,3 +34,6 @@ npm run build
 ```sh
 npm run lint
 ```
+=======
+# tsTest
+>>>>>>> 51393076b5593dd64c4e124c8f5c3ade9cec092b
