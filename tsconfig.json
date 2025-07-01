@@ -7,14 +7,16 @@
     "strict": true,
     "jsx": "preserve",
     "esModuleInterop": true,
-    "allowJs": true,
+    "allowJs": true, //同時把 .ts 和 .js 檔都當作輸入來源
     "checkJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "outDir": "./dist" // ✅ 加這行就不會覆蓋原始檔案
+    // "noEmit": true  // 只要型別檢查，不要輸出 .js 檔案
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "exclude": ["node_modules"]
