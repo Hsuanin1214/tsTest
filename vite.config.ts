@@ -23,18 +23,18 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  prettierRecommended, // 不確定是否需要
-  rules: {
-    'prettier/prettier': [
-      'warn',
-      {
-        arrowParens: 'avoid',
-        printWidth: 120,
-        semi: true,
-        singleQuote: true,
-        trailingComma: 'none'
-      }
-    ]
-  },
+  // prettierRecommended, // 不確定是否需要
+  // rules: {
+  //   'prettier/prettier': [
+  //     'warn',
+  //     {
+  //       arrowParens: 'avoid',
+  //       printWidth: 120,
+  //       semi: true,
+  //       singleQuote: true,
+  //       trailingComma: 'none'
+  //     }
+  //   ]
+  // },
   base
 });
