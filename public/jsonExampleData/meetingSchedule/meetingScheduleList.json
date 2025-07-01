@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "meetingDate": "2025-04-22",
+      "meetingWeek": "一",
+      "meetingDetail": {
+        "title": "跨部門月會",
+        "time": "下午 1: 00",
+        "location": "會議室A",
+        "contact": "王小明",
+        "isPublic": true,
+        "file": {
+          "name": "會議記錄.pdf",
+          "url": "/files/meeting-record.pdf"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "meetingDate": "2025-04-24",
+      "meetingWeek": "一",
+      "meetingDetail": {
+        "title": "產品規劃會議",
+        "time": "下午 3: 30",
+        "location": "Zoom 線上會議",
+        "contact": "林小花",
+        "isPublic": false,
+        "file": {
+          "name": "",
+          "url": ""
+        }
+      }
+    }
+  ],
+  "currentPage": 1,
+  "pageSize": 10,
+  "totalRecords": 100,
+  "totalPages": 100,
+  "operationResult": {
+    "success": true,
+    "messages": [
+      "查詢成功"
+    ],
+    "statusCode": 200,
+    "data": null
+  }
+}

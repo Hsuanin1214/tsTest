@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "title": "「台東新設成功淨水場環境影響說明書第四次變更內容對照表」專案小組審查會議 - 已公開不出席",
+      "start": "2025-06-02T08:30:00.000Z",
+      "allDay": false,
+      "color": "#dc3545",
+      "extendedProps": {
+        "date": "2025-06-02",
+        "status": "已公開不出席",
+        "location": "本部後棟101會議室",
+        "organizer": "專案小組",
+        "phone": "02-1234-5678",
+        "fileName": "會議記錄.pdf",
+        "fileId": "meeting-record-1234"
+      }
+    },
+    {
+      "id": "2",
+      "title": "下午茶討論 - 已公開出席",
+      "start": "2025-06-10T14:30:00.000Z",
+      "allDay": false,
+      "color": "#28a745",
+      "extendedProps": {
+        "date": "2025-06-10",
+        "status": "已公開出席",
+        "location": "本部後棟101會議室",
+        "organizer": "專案小組",
+        "phone": "02-1234-5678"
+      }
+    },
+    {
+      "id": "non-proj-1-1",
+      "title": "「廣源觀光旅館環境影響說明書」專案小組第2次初審會議",
+      "start": "2025-06-04T10:00:00.000Z",
+      "allDay": false,
+      "color": "#28a745",
+      "extendedProps": {
+        "date": "2025-06-04",
+        "status": "非迴避委員",
+        "location": "本部後棟101會議室",
+        "organizer": "非專案小組",
+        "phone": "02-1234-5678",
+        "fileName": "會議通知單1.pdf",
+        "fileId": "nonproj-0-doc"
+      }
+    },
+    {
+      "id": "non-proj-1-2",
+      "title": "「台灣～澎湖161kV電纜線路工程環境影響說明書變更內容對照表（停止營運期間環境監測）」專案小組第2次審查會議",
+      "start": "2025-06-04T10:00:00.000Z",
+      "allDay": false,
+      "color": "#dc3545",
+      "extendedProps": {
+        "date": "2025-06-04",
+        "status": "迴避委員",
+        "location": "本部後棟101會議室",
+        "organizer": "非專案小組",
+        "phone": "02-1234-5678",
+        "fileName": "會議通知單2.pdf",
+        "fileId": "nonproj-0-doc"
+      }
+    }
+  ],
+  "operationResult": {
+    "success": true,
+    "messages": [
+      "查詢成功"
+    ],
+    "statusCode": 200,
+    "data": null
+  }
+}

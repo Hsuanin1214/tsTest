@@ -1,0 +1,16 @@
+{
+  "meetingStatusOptions": [
+    {
+      "label": "未填寫",
+      "value": 1
+    },
+    {
+      "label": "出席",
+      "value": 2
+    },
+    {
+      "label": "不出席",
+      "value": 3
+    }
+  ]
+}

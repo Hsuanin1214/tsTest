@@ -1,0 +1,71 @@
+{
+  "meetingData": [
+    {
+      "id": 1,
+      "surveyDeadline": "114-04-05",
+      "meetingName": "「彰化福漢風力發電廠計畫環境影響說明書」專案小組第2次初審會議",
+      "status": 3,
+      "convener": "吳義林",
+      "location": "本部後棟101會議室",
+      "description": "針對北部某開發案進行第二次初審",
+      "contactName": "李宗璋",
+      "contactPhone": "02 2311-7722#2745"
+    },
+    {
+      "id": 2,
+      "surveyDeadline": "114-04-10",
+      "meetingName": "廣源觀光旅館環境影響說明書」專案小組第2次初審會議",
+      "status": 2,
+      "convener": "張瓊芬",
+      "location": "本部後棟101會議室",
+      "description": "討論交通影響與水保設施配置",
+      "contactName": "李育菱",
+      "contactPhone": "02-23117722#2746"
+    },
+    {
+      "id": 3,
+      "surveyDeadline": "113-09-01",
+      "meetingName": "環境部環境影響評估審查委員會第32次會議",
+      "status": 1,
+      "convener": "王雅玢",
+      "location": "線上會議",
+      "description": "例行審查會議",
+      "contactName": "陳信宏",
+      "contactPhone": "02-23117722#2747"
+    },
+    {
+      "id": 4,
+      "surveyDeadline": "113-09-10",
+      "meetingName": "C科學園區污水處理廠放流水標準公聽會",
+      "status": 3,
+      "convener": "李健育",
+      "location": "環境部大禮堂",
+      "description": "討論放流水標準修訂",
+      "contactName": "林淑娟",
+      "contactPhone": "02-23117722#2748"
+    },
+    {
+      "id": 5,
+      "surveyDeadline": "113-09-15",
+      "meetingName": "第102次環境影響評估審查委員會",
+      "status": 2,
+      "convener": "白子易",
+      "location": "本部501會議室",
+      "description": "審查多個開發案",
+      "contactName": "黃昭憲",
+      "contactPhone": "02-23117722#2749"
+    }
+  ],
+  "currentPage": 1,
+  "pageSize": 10,
+  "totalRecords": 100,
+  "totalPages": 100,
+  "operationResult": {
+    "success": true,
+    "messages": [
+      "查詢成功"
+    ],
+    "statusCode": 200,
+    "data": null
+  }
+}

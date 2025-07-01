@@ -1,0 +1,135 @@
+@import 'tailwindcss';
+
+@theme {
+  /* --font-display: 'Satoshi', 'sans-serif';
+  --breakpoint-3xl: 120rem; */
+  --color-primary-100: #d5e8f7; /* gray-blue */
+  --color-primary-300: #749bc0; /* menu-hover-bg */
+  --color-primary-500: #3d6c97; /* default */
+  --color-primary-550: #005caf; /* title */
+  --color-primary-600: #1b5386; /* dark */
+  --color-primary-700: #0c3b5e; /* select */
+  --color-secondary-100: #f0f0f0; /* txtcolor menu-bg、disabled */
+  --color-secondary-200: #d1d1d1; /* txtcolor border-gray */
+  --color-secondary-500: #63686e; /* gray */
+  --color-secondary-600: #545454; /* txtcolor default */
+  --color-secondary-700: #464c53; /* gray-dark */
+  --color-warning-500: #ef852e; /* orange */
+  --color-warning-550: #e47112; /* orange-dark */
+  --color-error-500: #cd5c5c; /* red */
+  --color-error-600: #cb4335; /* red-dark */
+
+  /* --background-image: url('@/assets/images/backgroundImg.jpg'); */
+}
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* 隱藏 ::-ms-reveal */
+@layer base {
+  /* body {
+		@apply focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-500;
+	} */
+  ::-ms-reveal {
+    display: none;
+  }
+}
+
+@layer utilities {
+  /* 唯讀樣式 */
+  .disabled-textarea-style {
+    @apply cursor-not-allowed resize-y bg-gray-100 text-gray-500 focus:outline-none;
+  }
+  .disabled-style {
+    @apply pointer-events-none bg-gray-100 text-gray-500;
+  }
+  /* 必填樣式 */
+  .required-red {
+    @apply relative before:absolute before:top-0 before:-left-3 before:text-red-500 before:content-['*'];
+  }
+  /* 焦點樣式 */
+  .a11y-focus {
+    @apply focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply cursor-pointer rounded-lg border border-transparent px-4 py-2 font-semibold text-white shadow-md transition active:scale-[0.99];
+  }
+  .btn-base {
+    @apply px-4 py-2 text-base;
+  }
+  .btn-sm {
+    @apply cursor-pointer px-3 py-2 text-sm;
+  }
+  .btn-xs {
+    @apply cursor-pointer px-2 py-1.5 text-xs;
+  }
+
+  .btn-warning {
+    @apply bg-warning-500 hover:bg-warning-550 cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-orange-500;
+  }
+  .btn-error {
+    @apply bg-error-500 hover:bg-error-600 cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .btn-warning-550 {
+    @apply bg-warning-550 hover:bg-warning-550 cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .btn-secondary {
+    @apply bg-secondary-500 hover:bg-secondary-700 cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .btn-secondary-300 {
+    @apply bg-secondary-200 hover:bg-secondary-500 cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .btn-primary {
+    @apply bg-primary-500 checked:bg-primary-700 hover:bg-primary-600 cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .btn-primary-300 {
+    @apply bg-primary-300 cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .btn-outline-warning {
+    @apply border-warning-500 text-warning-500 hover:bg-warning-500 cursor-pointer hover:text-white focus:outline-2 focus:outline-offset-4 focus:outline-orange-500;
+  }
+  .btn-outline-primary {
+    @apply border-primary-500 text-primary-500 checked:bg-primary-700 hover:bg-primary-500 cursor-pointer border hover:text-white focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .btn-outline-secondary {
+    @apply border-secondary-500 text-secondary-500 checked:bg-secondary-700 hover:bg-secondary-500 cursor-pointer border hover:text-white focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .btn-outline-primary-300 {
+    /*btn-subOutline-primary*/
+    @apply border-primary-300 text-primary-300 hover:bg-primary-300 cursor-pointer border hover:text-white focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  /* input、textarea 樣式 (是否需要h-11) */
+  .form-control {
+    @apply focus:border-primary-500 w-full rounded-md border-2 border-gray-200 px-3 py-2 placeholder-gray-400 focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .form-select {
+    @apply text-secondary-500 focus:border-primary-500 h-11 w-full rounded-md border-2 border-gray-200 bg-white px-3 placeholder-gray-400 focus:border-2 focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .form-textarea {
+    @apply focus:border-primary-500 w-full rounded-md border-2 border-gray-200 px-2 py-2 focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .checkbox {
+    @apply accent-primary-700 h-[16px] w-[16px] cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .radio-btn {
+    @apply accent-primary-700 h-[20px] w-[20px] cursor-pointer focus:outline-2 focus:outline-offset-4 focus:outline-amber-500;
+  }
+  .radio-label {
+    @apply flex cursor-pointer items-center;
+  }
+  /* input 樣式 (唯讀) */
+  /* .disabled-div {
+    @apply min-h-[2.75rem] w-full rounded-md border-2 bg-zinc-50 px-3 py-2 text-secondary-500 focus:outline-none;
+  }
+  .input-hover-bg {
+    @apply hover:bg-blue-100;
+  } */
+
+  .bg-primary-gradient {
+    background-image: linear-gradient(-180deg, #d5e8f7 0%, #9cc4e1 100%);
+  }
+}

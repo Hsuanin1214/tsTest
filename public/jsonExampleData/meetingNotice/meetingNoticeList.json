@@ -1,0 +1,56 @@
+{
+  "meetingNoticeList": [
+    {
+      "id": 1,
+      "type": "成會通知",
+      "date": "113-04-25",
+      "weekday": "四",
+      "time": "14:00",
+      "title": "113-第二次環境影響評估會議",
+      "location": "本部後棟101會議室",
+      "contactor": "陳OO",
+      "phone": "02-2333-1000 #2375"
+    },
+    {
+      "id": 2,
+      "type": "因故延期",
+      "date": "113-04-20",
+      "weekday": "六",
+      "time": "09:30",
+      "title": "南部水資源發展討論會延期通知",
+      "location": "南區水資源管理中心會議室",
+      "contactor": "林OO",
+      "phone": "07-822-3456 #123"
+    },
+    {
+      "id": 3,
+      "type": "成會通知",
+      "date": "113-04-15",
+      "weekday": "一",
+      "time": "10:00",
+      "title": "空污減量策略小組會議",
+      "location": "本部環保大樓3樓會議室",
+      "contactor": "吳OO",
+      "phone": "02-2333-1000 #2310"
+    },
+    {
+      "id": 4,
+      "type": "成會通知",
+      "date": "113-04-10",
+      "weekday": "三",
+      "time": "15:00",
+      "title": "海洋保育政策座談會",
+      "location": "中央會議廳",
+      "contactor": "王OO",
+      "phone": "02-1234-5678 #112"
+    }
+  ],
+  "operationResult": {
+    "success": true,
+    "messages": [
+      "查詢成功"
+    ],
+    "statusCode": 200,
+    "data": null
+  }
+}
