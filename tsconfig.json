@@ -18,6 +18,6 @@
     "outDir": "./dist" // ✅ 加這行就不會覆蓋原始檔案
     // "noEmit": true  // 只要型別檢查，不要輸出 .js 檔案
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/shims-vue.d.ts"],
   "exclude": ["node_modules"]
 }
