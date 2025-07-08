@@ -1,4 +1,3 @@
-import { OpinionItem } from './useOpinionStore';
 import { defineStore } from 'pinia';
 import { ref, computed, ComputedRef } from 'vue';
 import axios from 'axios';
@@ -9,6 +8,7 @@ export type UploadKey = 'Upload' | 'NotUpload';
 export type TeamKey = 'ProjectTeam' | 'NotProjectTeam';
 export type TypeKey = 'Confirm' | 'Review';
 
+// 是一個型別，它的值只能是下列八個字串中的一個
 export type OpinionKey =
   | 'countUploadAndProjectTeamAndConfirm'
   | 'countNotUploadAndProjectTeamAndConfirm'
@@ -21,7 +21,7 @@ export type OpinionKey =
 
 export interface OpinionItem {
   isUpload: boolean;
-  isProjectTeam: Boolean;
+  isProjectTeam: boolean;
   type: '確認意見' | '書審意見';
   [key: string]: any; //若資料有其他欄位
 }
@@ -50,10 +50,13 @@ export const useOpinionStore = defineStore('opinion', () => {
   /** 取得所有意見上傳資料 */
   const getOpinionUploadInfo = async (): Promise<void> => {
     try {
-      const res = await axios({
-        method: 'get',
-        url: '/jsonExampleData/opinionUpload/opinionUploadList.json'
-      });
+      // const res = await axios({
+      //   method: 'get',
+      //   url: '/jsonExampleData/opinionUpload/opinionUploadList.json'
+      // });
+      const res = await axios.get<{ opinionList: OpinionItem[] }>(
+        '/jsonExampleData/opinionUpload/opinionUploadList.json'
+      );
       allOpinionsData.value = res.data.opinionList;
     } catch {
       alertStore.trigger({
