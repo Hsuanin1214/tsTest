@@ -1,15 +1,32 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import StaticModal from '@/components/uiComponents/Modal/StaticModal.vue';
 import { useMeetingNoticeStore } from '@/stores/MeetingNotice/useMeetingNoticeStore.js';
 // import { useAlertStore } from '@/stores/Alert/alertStore';
 
-defineProps({
-  meetings: {
-    type: Array,
-    required: true
-  }
-});
+interface Meeting {
+  id: string;
+  type: string;
+  date: string;
+  time: string;
+  title: string;
+  location: string;
+  contactor: string;
+  phone: string;
+  weekday: string;
+}
+
+interface Props {
+  meetings?: Meeting[];
+}
+
+const props = defineProps<Props>();
+// defineProps({
+//   meetings: {
+//     type: Array,
+//     required: true
+//   }
+// });
 
 const PageConstInfo = Object.freeze({
   MeetingNotice: '成會通知',
@@ -19,10 +36,10 @@ const PageConstInfo = Object.freeze({
 
 const meetingNoticeStore = useMeetingNoticeStore();
 const isModalOpen = ref(false);
-const selectedMeeting = ref(null);
+const selectedMeeting = ref<Meeting | null>(null);
 
-const openModal = meetingId => {
-  selectedMeeting.value = meetingNoticeStore.getMeetingOneNotice(meetingId);
+const openModal = (meetingId: string): void => {
+  selectedMeeting.value = meetingNoticeStore.getMeetingOneNotice(meetingId) ?? null;
   isModalOpen.value = true;
 };
 
