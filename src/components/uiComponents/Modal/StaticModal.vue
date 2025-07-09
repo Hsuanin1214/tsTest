@@ -1,5 +1,17 @@
-<script setup>
+<script setup lang="ts">
 import { XMarkIcon } from '@heroicons/vue/24/outline';
+
+interface Props {
+  isModalOpen?: boolean;
+  isHasTitle?: boolean;
+  title?: string;
+  isHasBtn?: boolean;
+  widthClass?: string;
+  paddingClass?: string;
+  titleColor?: string;
+}
+const props = defineProps<Props>();
+
 const props = defineProps({
   isModalOpen: {
     type: Boolean,

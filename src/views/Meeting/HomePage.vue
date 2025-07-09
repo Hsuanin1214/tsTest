@@ -1,11 +1,11 @@
-<script setup>
+<script setup lang="ts">
 import { computed, onMounted } from 'vue';
 import { InformationCircleIcon } from '@heroicons/vue/24/solid';
 import BaseTooltip from '@/components/uiComponents/Tooltip/BaseTooltip.vue';
 import MeetingNotice from '@/components/pages/MeetingNotice.vue';
 import { RouterLink, useRouter } from 'vue-router';
 import { useMeetingStore } from '@/stores/MeetSurvey/useMeetingStore.js';
-import { useOpinionStore } from '@/stores/OpinionUpload/useOpinionStore.js';
+import { useOpinionStore } from '@/stores/OpinionUpload/useOpinionStore';
 import { useMeetingNoticeStore } from '@/stores/MeetingNotice/useMeetingNoticeStore.js';
 
 const router = useRouter();
@@ -20,51 +20,71 @@ const countAbsent = computed(() => meetingStore.countAbsent);
 const ProjectTeamType = {
   PROJECT: true,
   NON_PROJECT: false
-};
+} as const;
 
 const UploadStatus = {
   UPLOADED: true,
   NOT_UPLOADED: false
-};
+} as const;
 
 const OpinionType = {
   CONFIRM: '確認意見',
   REVIEW: '書審意見'
-};
+} as const;
+
+// 類型：可視需要進一步補上 stricter typing
+type OpinionKey =
+  | 'countUploadAndProjectTeamAndConfirm'
+  | 'countNotUploadAndProjectTeamAndConfirm'
+  | 'countUploadAndProjectTeamAndReview'
+  | 'countNotUploadAndProjectTeamAndReview'
+  | 'countUploadAndNotProjectTeamAndConfirm'
+  | 'countNotUploadAndNotProjectTeamAndConfirm'
+  | 'countUploadAndNotProjectTeamAndReview'
+  | 'countNotUploadAndNotProjectTeamAndReview';
 
 /** 取得意見上傳資料 */
-const getCount = (isUpload, isProjectTeam, type) => {
+const getCount = (
+  isUpload: boolean,
+  isProjectTeam: boolean,
+  type: (typeof OpinionType)[keyof typeof OpinionType]
+): number => {
   const uploadKey = isUpload ? 'Upload' : 'NotUpload';
   const teamKey = isProjectTeam ? 'ProjectTeam' : 'NotProjectTeam';
   const typeKey = type === OpinionType.CONFIRM ? 'Confirm' : 'Review';
-  const key = `count${uploadKey}And${teamKey}And${typeKey}`;
+  const key = `count${uploadKey}And${teamKey}And${typeKey}` as OpinionKey;
+
   return opinionStore.countByConditions[key] ?? 0;
 };
 
-const getMeetSurveyInfo = async () => {
+const getMeetSurveyInfo = async (): Promise<void> => {
   if (meetingStore.allMeetingsData.length === 0) {
     await meetingStore.getMeetSurveyInfo();
   }
 };
-const getOpinionUploadInfo = async () => {
+const getOpinionUploadInfo = async (): Promise<void> => {
   await opinionStore.getOpinionUploadInfo();
 };
 
-const goToOpinionUpload = (isProjectTeam, isUpload, type) => {
-  router.push({
-    name: 'opinionUpload',
-    query: {
-      isProjectTeam,
-      isUpload,
-      type
-    }
-  });
-};
-
-const getMeetNoticeInfo = async () => {
+const getMeetNoticeInfo = async (): Promise<void> => {
   if (meetingNoticeStore.meetingNotices.length === 0) {
     await meetingNoticeStore.getMeetingNotices();
   }
+};
+
+const goToOpinionUpload = (
+  isProjectTeam: Boolean,
+  isUpload: Boolean,
+  type: (typeof OpinionType)[keyof typeof OpinionType]
+): void => {
+  router.push({
+    name: 'opinionUpload',
+    query: {
+      isProjectTeam: String(isProjectTeam),
+      isUpload: String(isUpload),
+      type
+    }
+  });
 };
 
 onMounted(async () => {
